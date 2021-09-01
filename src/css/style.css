@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: none;
+    
+}
+
+
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 100vw;
+   height: 7.5vh;
+   background-color:  #C3CFD9; 
+   color: #E8833A;
+   font-size: 34px;
+}
