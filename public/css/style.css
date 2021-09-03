@@ -1,15 +1,12 @@
+
+
 *{
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
 }
-body{
-    font-family: 'Roboto', sans-serif;
-    margin: none;
+
+.header{
     
-}
-
-
-
-header{
     display: flex;
     justify-content: center;
     align-items: center;
