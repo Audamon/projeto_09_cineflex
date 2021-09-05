@@ -9,6 +9,7 @@ export default function MoviesList({ movies }) {
             <MovieList>
 
                 {movies.map(movie => <Link to={`/sessoes/${movie.id}`}>
+                                        
                                         <Movie key={movie.id}>
                                             <img src={movie.posterURL} alt="" />
                                         </Movie>

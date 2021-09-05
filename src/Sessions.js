@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 const sessoes = {
     id: 1,
@@ -135,31 +135,31 @@ export default function Sessions() {
     const { idFilme } = useParams();
 
     return (
-        <SessionsList>
-            <H1>Selecione o horário</H1>
-            {sessoes.days.map(sessao => {return (<>
-                                            <Date key={sessao.id}>{sessao.weekday} - {sessao.date}</Date>
-                                            <Session key={sessao.id}>
-                                                {sessao.showtimes.map(showtime => <Hour key={showtime.id}>{showtime.name}</Hour>)}
-                                                <Hour>15:00</Hour>
-                                                <Hour>19:00</Hour>
-                                            </Session>
-                                        </>
-                                        );})}
+        <>
+            <SessionsList>
+                <H1>Selecione o horário</H1>
+                {sessoes.days.map((sessao, index) => {return (<>
+                                               
+                                                <Date key={index}>{sessao.weekday} - {sessao.date}</Date>
+                                                <Session key={sessao.id}>
+                                                    {sessao.showtimes.map(showtime => <Link to={`/assentos/${sessao.id}`} ><Hour key={showtime.id}>{showtime.name}</Hour></Link>)}
+                                                </Session>
+                                            </>
+                                            );})}
+            </SessionsList>
             <MoviePrview>
                 <Movie>
-                    <img src="https://image.tmdb.org/t/p/w500/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg" alt="" />
+                    <img src={sessoes.posterURL} alt="" />
                 </Movie>
-                <Name>2067 <br /></Name>
+                <Name>{sessoes.title} <br /></Name>
             </MoviePrview>
-
-        </SessionsList>
-
+        </>
     );
 }
 
 const SessionsList = styled.div`
     padding:0 8vw 0 8vw ;
+    margin-bottom: 13vh;
 
 `
 const Date = styled.h1`
@@ -218,8 +218,6 @@ const Name = styled.h1`
 
 `
 const H1 = styled.h1`
-    /* font-family: 'Roboto' sans-serif;
-    font-weight: 400; */
     margin-top: 7.5vh;
     display: inline-block;
     width: 100%;

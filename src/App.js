@@ -6,6 +6,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import axios from "axios";
+import Seats from "./Seats";
+import Success from "./Success";
 
 const movies = [
   {
@@ -36,13 +38,14 @@ export default function App() {
         <Route path="/sessoes/:idFilme" exact={true}>
           <Sessions />
         </Route>
-        <Route></Route>
-        <Route></Route>
-
+        <Route path="/assentos/:idSessao" exact={true}>
+          <Seats />
+        </Route>
+        <Route path="/sucesso" exact={true}>
+           <Success /> 
+          {/* <MoviesList movies={movies} /> */}
+        </Route>
       </Switch>
-     
-
-
     </BrowserRouter>
   );
 }
