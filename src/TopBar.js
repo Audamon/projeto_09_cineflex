@@ -6,13 +6,13 @@ export default function TopBar({backButton}) {
     let h =useHistory();
     
     function teste(){
-        console.log((backButton === undefined || backButton === "/"))
+        console.log((backButton === undefined || backButton === "/" || backButton === " "))
         h.goBack()
     }
 
     return (
             <Header >
-                <Button onClick={teste} display={(backButton === undefined )? "none": 'block'}>Voltar</Button>
+                <Button onClick={teste} display={(backButton === undefined || backButton === "/"||backButton===" ")? "none": 'block'}>Voltar</Button>
                 CINEFLEX
             </Header> 
     );

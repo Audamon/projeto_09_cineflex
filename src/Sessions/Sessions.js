@@ -12,7 +12,7 @@ export default function Sessions({order, setOrder, setBackButton}) {
         promise.then((response => {
 
             setSessoes({ ...response.data })
-            setBackButton(idFilme)
+            setBackButton(`/sessoes/${idFilme}`)
             setOrder({...order, title: response.data.title})
         }))
     }, [])
