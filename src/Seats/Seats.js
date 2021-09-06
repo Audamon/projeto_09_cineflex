@@ -9,6 +9,8 @@ export default function Seats({ order, setOrder, setBackButton }) {
     const [seats, setSeats] = useState({ day: {}, movie: {}, seats: [] });
     const [choosenSeats, setChoosenSeats] = useState([])
     const [idSeats, setIdSeats] = useState([])
+    const[color, setColor] = useState("");
+    const [input, setInput] = useState("");
     useEffect(() => {
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/showtimes/` + idSessao + `/seats`);
         promise.then(response => {
@@ -32,6 +34,22 @@ export default function Seats({ order, setOrder, setBackButton }) {
         }
     }
     
+    function cpfValidation(e){
+        //console.log(e)
+    
+        setInput(e.target.value)
+        const cpfRegex = /[0-9]{3}\.{1}[0-9]{3}\.{1}[0-9]{3}\-{1}[0-9]{2}/
+        //console.log(cpfRegex.test(e.target.value ));
+        if((cpfRegex.test(e.target.value )) === false){
+            
+            setColor("#ff0000");
+        }else {
+            setOrder({ ...order, cpf: e.target.value })
+            setColor("#000000");
+        }
+        
+    }
+
     function closeOrder() {
         
         setOrder({ ...order, seats: [...choosenSeats] });
@@ -40,6 +58,7 @@ export default function Seats({ order, setOrder, setBackButton }) {
             name: order.buyerName,
             cpf: order.cpf
         };
+        //console.log(sendOrder)
         //axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', sendOrder);
     }
     return (
@@ -64,11 +83,11 @@ export default function Seats({ order, setOrder, setBackButton }) {
             </SeatSub>
             <NameInput>
                 Nome do comprador:
-                <input type="text" placeholder="Digite seu nome..." onChange={(e) => setOrder({ ...order, buyerName: e.target.value })}></input>
+                <input type="text" placeholder="Digite seu nome..." onChange={(e) => setOrder({ ...order, buyerName: e.target.value })}  ></input>
             </NameInput>
             <CpfInput>
                 CPF do comprador:
-                <input type="text" placeholder="Digite seu CPF..." onChange={(e) => setOrder({ ...order, cpf: e.target.value })}></input>
+                <input type="text" placeholder="Digite seu CPF..." value={input} onChange={(e) => cpfValidation(e)}  colorLetter={color}></input>
             </CpfInput>
 
             <Reserve>

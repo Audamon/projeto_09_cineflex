@@ -71,6 +71,8 @@ const CpfInput = styled.div`
         font-style: italic;
         border-radius: 3px;
         border: 1px solid #D5D5D5;
+        color: ${props => props.colorLetter};
+       
     }
 
 `
