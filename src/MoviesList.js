@@ -1,8 +1,17 @@
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-export default function MoviesList({ movies }) {
+export default function MoviesList() {
+    const [movies, setMovies] = useState([]);
+    useEffect(()=>{
+        const promise = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies")
+        promise.then(response =>{
+            setMovies([...response.data])
+        })
+    }, [])
+
     return (
         <>
             <H1>Selecione o filme</H1>
@@ -14,11 +23,9 @@ export default function MoviesList({ movies }) {
                                             <img src={movie.posterURL} alt="" />
                                         </Movie>
                                     </Link>)}
-
             </MovieList>
         </>
     );
-
 }
 
 const MovieList = styled.div` 

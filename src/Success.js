@@ -1,30 +1,28 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function Success() {
+export default function Success({order}) {
     return (
-        <>
+        <>  
+
             <H1><strong>Pedido feito</strong> <br /> <strong>com sucesso!</strong></H1>
             <Information>
                 <strong>Filme e sessão</strong>
                 <br />
-                Enola Holmes
+                {order.title}
                 <br />
-                24/06/2021 15:00
+                {order.date} {order.hour}
             </Information>
             <Information>
                 <strong>Ingressos</strong>
-                <br />
-                Assento 15
-                <br />
-                Assento 16
+                {order.seats.map(seat =>  <div>Assento {seat}</div> )}
             </Information>
             <Information>
                 <strong>Comprador</strong>
                 <br />
-                Nome: João
+                Nome: {order.buyerName}
                 <br />
-                CPF: 123.456.789-10
+                CPF: {order.cpf}
             </Information>
             <BackHome>
                 <Link to="/">
@@ -48,21 +46,14 @@ const H1 = styled.h1`
 const Information = styled.div` 
     margin: 10px 10px 30px 30px;
     font-size: 22px;
-    line-height: 30px;
+    
     strong{
         font-size: 24px;
+        line-height: 2;
     }
-
-`
-const Tickets = styled.div` 
-    margin: 10px 10px 30px 30px;
-    font-size: 24px;
-
-`
-const Buyer = styled.div` 
-    margin: 10px 10px 30px 30px;
-    font-size: 24px;
-
+    div{
+        line-height: 1.2;
+    }
 `
 const BackHome = styled.div` 
     margin: 100px 60px 0px 60px;
