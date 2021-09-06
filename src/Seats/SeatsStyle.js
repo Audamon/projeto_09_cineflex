@@ -47,42 +47,45 @@ const NameInput = styled.div`
     flex-direction: column;
     margin: 15% 5% 10% 5%;
     font-size: 18px;
-    
-    input{
-        font-size: 18px;
+`
+const NameVal = styled.input`
+    font-size: 18px;
         width: 95%;
         height: 45px;
         font-style: italic;
         border-radius: 3px;
         border: 1px solid #D5D5D5;
-        
-    }
+        color: ${props => props.colorletter};
 `
+
 const CpfInput = styled.div` 
     display: flex;
     flex-direction: column;
     margin: 15% 5% 10% 5%;
     font-size: 18px;
     
-    input{
+    
+`
+const CPF = styled.input`
+
         font-size: 18px;
         width: 95%;
         height: 45px;
         font-style: italic;
         border-radius: 3px;
         border: 1px solid #D5D5D5;
-        color: ${props => props.colorLetter};
+        color: ${props => props.colorletter};
        
-    }
-
+    
 `
+
 const MoviePrview = styled.div`
     position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100vw;
-    height: 13vh;
+    height: 18vh;
     background-color: #dfe6ed;
     bottom: 0;
     left: 0;
@@ -107,7 +110,7 @@ const Movie = styled.div`
     }
 `
 const Name = styled.h1`
-    font-size: 23px;
+    font-size: 21px;
 
 `
 const Reserve = styled.div`
@@ -135,4 +138,4 @@ const Reserve = styled.div`
        
     }
 `
-export {SeatsList, H1, Seat, SeatSub, Sub, NameInput, CpfInput, MoviePrview, Movie, Name, Reserve};
+export {SeatsList, H1, Seat, SeatSub, Sub, NameInput, CpfInput, MoviePrview, Movie, Name, Reserve, CPF, NameVal};

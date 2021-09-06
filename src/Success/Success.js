@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import {H1, Information, BackHome} from './SuccessStyle'
 
-export default function Success({order}) {
+export default function Success({order, setOrder}) {
+    function resetOrder(){
+        setOrder({title:'',
+                  date: '',
+                  hour: '',
+                  seats:[],
+                  buyerName: '',
+                  cpf: ''})
+    }
     return (
         <>  
             <H1><strong>Pedido feito</strong> <br /> <strong>com sucesso!</strong></H1>
@@ -25,7 +33,7 @@ export default function Success({order}) {
             </Information>
             <BackHome>
                 <Link to="/">
-                    <button> Voltar para Home</button>
+                    <button onClick={resetOrder}> Voltar para Home</button>
                 </Link>
             </BackHome>
         </>

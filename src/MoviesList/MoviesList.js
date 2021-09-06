@@ -5,13 +5,12 @@ import {MovieList, Movie, H1} from './MoviesListStyle'
 
 export default function MoviesList({ setBackButton}) {
     const [movies, setMovies] = useState([]);
-    const {p} = useParams()
+    
     useEffect(()=>{
         const promise = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies")
         promise.then(response =>{
             setMovies([...response.data])
-            console.log("p", p)
-            setBackButton(p);
+            
         })
     }, [])
 

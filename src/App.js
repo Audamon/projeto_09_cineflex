@@ -31,7 +31,7 @@ export default function App() {
           <Seats order={order} setOrder= {setOrder} setBackButton={setBackButton}/>
         </Route>
         <Route path="/sucesso" exact={true}>
-          <Success order={order}/>
+          <Success order={order} setOrder={setOrder}/>
         </Route>
       </Switch>
     </BrowserRouter>
