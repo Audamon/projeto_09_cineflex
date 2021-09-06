@@ -73,14 +73,15 @@ export default function Seats({ order, setOrder, setBackButton }) {
         };
         if (sendOrder.name === '' || sendOrder.cpf === '' || cpfVal === false || nameVal === false || sendOrder.ids.length === 0) {
             alert("Dados inválidos");
-            //setRota({ id: `/assentos/${idSessao}` });
+            
             console.log(rota.id);
         } else {
-
+            axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', sendOrder);
             setRota({ id: '/sucesso' });
+
         }
-        //console.log(sendOrder)
-        //axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', sendOrder);
+        
+        
     }
     return (
         <>
