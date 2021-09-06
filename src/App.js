@@ -15,18 +15,20 @@ export default function App() {
                                       seats:[],
                                       buyerName: '',
                                       cpf: ''});
+
+  const [backButton, setBackButton] =useState('');
   return (
     <BrowserRouter>
-      <TopBar />
+      <TopBar backButton={backButton}/>
       <Switch>
         <Route path="/" exact={true}>
-          <MoviesList />
+          <MoviesList setBackButton={setBackButton} />
         </Route>
         <Route path="/sessoes/:idFilme" exact={true}>
-          <Sessions order={order} setOrder={setOrder}/>
+          <Sessions order={order} setOrder={setOrder} setBackButton={setBackButton}/>
         </Route>
         <Route path="/assentos/:idSessao" exact={true}>
-          <Seats order={order} setOrder={setOrder}/>
+          <Seats order={order} setOrder= {setOrder} setBackButton={setBackButton}/>
         </Route>
         <Route path="/sucesso" exact={true}>
           <Success order={order}/>

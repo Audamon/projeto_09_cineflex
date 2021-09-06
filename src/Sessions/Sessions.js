@@ -3,7 +3,7 @@ import { useEffect, useState, } from "react";
 import {SessionsList, Date, Session, Hour, MoviePrview, Movie, Name, H1} from './SessionsStyle'
 import axios from "axios";
 
-export default function Sessions({order, setOrder}) {
+export default function Sessions({order, setOrder, setBackButton}) {
     const { idFilme } = useParams();
     const [sessoes, setSessoes] = useState({ days: [] })
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function Sessions({order, setOrder}) {
         promise.then((response => {
 
             setSessoes({ ...response.data })
-            
+            setBackButton(idFilme)
             setOrder({...order, title: response.data.title})
         }))
     }, [])

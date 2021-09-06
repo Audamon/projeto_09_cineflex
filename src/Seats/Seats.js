@@ -1,10 +1,10 @@
 
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import { useEffect, useState, } from "react";
 import {SeatsList, H1, Seat, SeatSub, Sub, NameInput, CpfInput, MoviePrview, Movie, Name, Reserve} from './SeatsStyle'
 import axios from "axios";
 
-export default function Seats({ order, setOrder }) {
+export default function Seats({ order, setOrder, setBackButton }) {
     const { idSessao } = useParams();
     const [seats, setSeats] = useState({ day: {}, movie: {}, seats: [] });
     const [choosenSeats, setChoosenSeats] = useState([])
@@ -14,12 +14,13 @@ export default function Seats({ order, setOrder }) {
         promise.then(response => {
             setSeats({ ...response.data })
             setOrder({ ...order, date: response.data.day.weekday, hour: response.data.name })
+            setBackButton(idSessao);
         })
     }, []);
-    let h = useHistory();
+    
     function chooseSeat(seat) {
         
-        console.log(h);
+        
         if (seat.isAvailable) {
             if (idSeats.includes(seat.id)) {
                 setIdSeats(idSeats.filter(idSeat => seat.id !== idSeat));
@@ -39,7 +40,7 @@ export default function Seats({ order, setOrder }) {
             name: order.buyerName,
             cpf: order.cpf
         };
-        axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', sendOrder);
+        //axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many', sendOrder);
     }
     return (
         <>
