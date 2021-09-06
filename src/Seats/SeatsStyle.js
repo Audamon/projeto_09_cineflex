@@ -110,7 +110,7 @@ const Name = styled.h1`
 `
 const Reserve = styled.div`
     display: flex;
-    margin: 50px 20px 20px 20px;
+    margin: 50px 20px 150px 20px;
     justify-content: center;
     align-items: center;
     text-decoration: none !important;
@@ -129,6 +129,7 @@ const Reserve = styled.div`
        background-color: #E8833A;
        color: #ffffff;
        border: none;
+       font-size: 18px;
        
     }
 `

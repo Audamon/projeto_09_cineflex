@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
 
-export default function TopBar(){
-    return(
-        <Header >CINEFLEX</Header>
+export default function TopBar() {
+   
+    }
+    return (
+        
+            <Header >CINEFLEX</Header>
+            
+       
     );
 
 }
 
 
-const Header=styled.header`
+const Header = styled.header`
     position: fixed;
     top: 0;
     left: 0;
@@ -21,4 +26,5 @@ const Header=styled.header`
    background-color:  #C3CFD9; 
    color: #E8833A;
    font-size: 34px;
-` 
+   
+`

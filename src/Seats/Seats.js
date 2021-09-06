@@ -1,5 +1,5 @@
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useEffect, useState, } from "react";
 import {SeatsList, H1, Seat, SeatSub, Sub, NameInput, CpfInput, MoviePrview, Movie, Name, Reserve} from './SeatsStyle'
 import axios from "axios";
@@ -16,8 +16,10 @@ export default function Seats({ order, setOrder }) {
             setOrder({ ...order, date: response.data.day.weekday, hour: response.data.name })
         })
     }, []);
-
+    let h = useHistory();
     function chooseSeat(seat) {
+        
+        console.log(h);
         if (seat.isAvailable) {
             if (idSeats.includes(seat.id)) {
                 setIdSeats(idSeats.filter(idSeat => seat.id !== idSeat));
