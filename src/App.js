@@ -1,8 +1,8 @@
 import TopBar from "./TopBar";
-import MoviesList from "./MoviesList";
-import Sessions from "./Sessions";
-import Seats from "./Seats";
-import Success from "./Success";
+import MoviesList from "./MoviesList/MoviesList";
+import Sessions from "./Sessions/Sessions";
+import Seats from "./Seats/Seats";
+import Success from "./Success/Success";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
