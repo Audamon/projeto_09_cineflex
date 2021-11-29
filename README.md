@@ -2,7 +2,7 @@
 
 This project was made using  `React`\
 App to buy tickets to theater\
-Demo ``\
+Demo `https://cineflex-rosy.vercel.app`\
 ![](https://github.com/Audamon/projeto_09_cineflex/blob/main/public/Assets/cineflex.gif)
 
 # About
