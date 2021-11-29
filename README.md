@@ -6,7 +6,7 @@ Demo `https://cineflex-rosy.vercel.app`\
 ![](https://github.com/Audamon/projeto_09_cineflex/blob/main/public/Assets/cineflex.gif)
 
 # About
-- Dont't know waht to write here yet
+- Dont't know what to write here yet
 
 # How to run 
 
