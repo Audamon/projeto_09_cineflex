@@ -3,7 +3,7 @@
 This project was made using  `React`\
 App to buy tickets to theater\
 Demo ``\
-![]()
+![](https://github.com/Audamon/projeto_09_cineflex/blob/main/public/Assets/cineflex.gif)
 
 # About
 - Dont't know waht to write here yet
