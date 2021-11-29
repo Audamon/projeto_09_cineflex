@@ -15,6 +15,7 @@ const H1 = styled.h1`
   text-align: center;
   line-height: 60px;
   font-size: 24px;
+  color: #ffd700;
 `;
 const Seat = styled.button`
   background-color: ${(props) => props.backgroundColor};
@@ -33,6 +34,7 @@ const SeatSub = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
+  color: #ffd700;
 `;
 const Sub = styled.div`
   display: flex;
@@ -46,6 +48,7 @@ const NameInput = styled.div`
   flex-direction: column;
   margin: 15% 5% 10% 5%;
   font-size: 18px;
+  color: #ffd700;
 
   input {
     font-size: 18px;
@@ -53,7 +56,12 @@ const NameInput = styled.div`
     height: 45px;
     font-style: italic;
     border-radius: 3px;
-    border: 1px solid #d5d5d5;
+    border: 1px solid #ffd700;
+    ::placeholder{
+      color: #ffd700;
+      opacity: 1;
+      background-color: #292929;
+    }
   }
 `;
 const CpfInput = styled.div`
@@ -61,6 +69,7 @@ const CpfInput = styled.div`
   flex-direction: column;
   margin: 15% 5% 10% 5%;
   font-size: 18px;
+  color: #ffd700;
 
   input {
     font-size: 18px;
@@ -68,7 +77,12 @@ const CpfInput = styled.div`
     height: 45px;
     font-style: italic;
     border-radius: 3px;
-    border: 1px solid #d5d5d5;
+    border: 1px solid #ffd700;
+    ::placeholder{
+      color: #ffd700;
+      opacity: 1;
+      background-color: #292929;
+    }
   }
 `;
 const MoviePrview = styled.div`
@@ -119,8 +133,8 @@ const Reserve = styled.div`
     width: 65%;
     height: 45px;
     border-radius: 3px;
-    background-color: #e8833a;
-    color: #ffffff;
+    background-color: #ffd700;
+    color: #010B02;
     border: none;
     font-size: 18px;
   }

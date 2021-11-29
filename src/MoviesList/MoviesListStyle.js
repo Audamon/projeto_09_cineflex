@@ -13,10 +13,10 @@ const MovieList = styled.div`
 
 const Movie = styled.div`
   padding: 2px 2px 2px 2px;
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px 2px rgba(255, 215, 0, 0.2);
   width: 39vw;
   height: 24vh;
-  background-color: #ffffff;
+  background-color: #0a0a0a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,7 @@ const Movie = styled.div`
   img {
     width: 92%;
     height: 92%;
+    border-radius: 6px;
   }
 `;
 
@@ -37,5 +38,6 @@ const H1 = styled.h1`
   text-align: center;
   line-height: 60px;
   font-size: 24px;
+  color: #ffd700;
 `;
 export { MovieList, Movie, H1 };

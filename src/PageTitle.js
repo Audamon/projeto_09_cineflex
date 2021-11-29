@@ -5,6 +5,7 @@ export default function PageTitle() {
 }
 
 const H1 = styled.h1`
+  color: #ffd700;
   margin-top: 7.5vh;
   display: inline-block;
   width: 100vw;
@@ -12,4 +13,5 @@ const H1 = styled.h1`
   text-align: center;
   line-height: 60px;
   font-size: 24px;
+  
 `;
