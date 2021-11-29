@@ -57,11 +57,11 @@ export default function Seats({ order, setOrder, setBackButton }) {
   function seatColor(seat) {
     if (seat.isAvailable) {
       if (choosenSeats.includes(seat.name)) {
-        return '#8DD7CF';
+        return '#00f0d6';
       }
       return '#C3CFD9';
     }
-    return '#FBE192';
+    return '#ffd700';
   }
   return (
     <>
@@ -79,7 +79,7 @@ export default function Seats({ order, setOrder, setBackButton }) {
       </SeatsList>
       <SeatSub>
         <Sub>
-          <Seat backgroundColor="#8DD7CF"></Seat>
+          <Seat backgroundColor="#00f0d6"></Seat>
           Selecionado
         </Sub>
         <Sub>
@@ -87,7 +87,7 @@ export default function Seats({ order, setOrder, setBackButton }) {
           Disponível
         </Sub>
         <Sub>
-          <Seat backgroundColor="#FBE192"></Seat>
+          <Seat backgroundColor="#ffd700"></Seat>
           Indisponível
         </Sub>
       </SeatSub>

@@ -7,12 +7,12 @@ const H1 = styled.h1`
   height: 8vh;
   text-align: center;
   font-size: 24px;
-  color: #247a6b;
+  color:  #ffd700;
 `;
 const Information = styled.div`
   margin: 10px 10px 30px 30px;
   font-size: 22px;
-
+  color:  #ffd700;
   strong {
     font-size: 24px;
     line-height: 2;
@@ -26,10 +26,10 @@ const BackHome = styled.div`
   button {
     font-size: 18px;
     width: 100%;
-    color: #ffffff;
+    color:  #010B02;
     height: 45px;
     border-radius: 3px;
-    background-color: #e8833a;
+    background-color: #ffd700;
     border: none;
   }
 `;

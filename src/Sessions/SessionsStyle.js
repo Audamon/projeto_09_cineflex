@@ -6,6 +6,7 @@ const SessionsList = styled.div`
 `;
 const Date = styled.h1`
   font-size: 20px;
+  color: #ffd700;
 `;
 const Session = styled.div`
   display: flex;
@@ -14,13 +15,13 @@ const Session = styled.div`
 `;
 const Hour = styled.button`
   border: none;
-  background-color: #e8833a;
+  background-color: #ffd700;
   font-size: 18px;
   margin: 15px 5px 15px 0;
   border-radius: 3px;
   width: 22vw;
   height: 5vh;
-  color: #ffffff;
+  color: #010B02;
 `;
 const MoviePrview = styled.div`
   position: fixed;
@@ -61,6 +62,7 @@ const H1 = styled.h1`
   text-align: center;
   line-height: 60px;
   font-size: 24px;
+  color: #ffd700;
 `;
 
 export {
